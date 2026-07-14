@@ -1,0 +1,3160 @@
+{
+  "description": "BBScan web path scanning rules",
+  "total_rules": 346,
+  "unique_paths": 339,
+  "files": {
+    "change_log": 5,
+    "compressed_backup_files": 135,
+    "config_file": 24,
+    "directory_traversal": 11,
+    "git_and_svn": 4,
+    "go_pprof_debug": 2,
+    "graphite_ssrf": 1,
+    "java_server_faces2": 1,
+    "java_web_config_files": 58,
+    "phpinfo_or_apc": 6,
+    "phpmyadmin": 4,
+    "sensitive_url": 47,
+    "shell_script_disclosure": 9,
+    "source_code_disclosure": 13,
+    "ssh_sensitive_file": 8,
+    "test_page": 10,
+    "tomcat_manager": 1,
+    "web_editors": 7
+  },
+  "rules": {
+    "change_log": [
+      {
+        "path": "/readme",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/README",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/readme.md",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/readme.html",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/changelog.txt",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "compressed_backup_files": [
+      {
+        "path": "/temp.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/temp.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/temp.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/temp.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/temp.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/package.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/package.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/package.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/package.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/package.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/tmp.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/tmp.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/tmp.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/tmp.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/tmp.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/test.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/test.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/test.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/test.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/test.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/backup.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/backup.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/backup.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/backup.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/back.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/db.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.sqlite",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.sql.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/dump.sql.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.sql.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/backup.sql.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.sql.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/ftp.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/ftp.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/ftp.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/ftp.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/ftp.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/web.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/web.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/web.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/web.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/web.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/www.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/www.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/www.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/www.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/www.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/wwwroot.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/wwwroot.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/wwwroot.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/wwwroot.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/wwwroot.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/output.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/admin.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/admin.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/admin.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/admin.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/admin.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/upload.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/upload.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/upload.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/upload.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/upload.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/website.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/website.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/website.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/website.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/website.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/package.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/package.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/package.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/package.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/package.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/sql.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/sql.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/sql.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/sql.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/sql.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/sql.7z",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/data.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/admin.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/backup.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/dump.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/",
+        "conditions": {
+          "flag": "root_only",
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE"
+        }
+      },
+      {
+        "path": "/update.sql",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "CREATE TABLE",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.7z",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.tar.tz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/index.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/old.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/old.rar",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/old.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/old.tar.bz2",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/old.tgz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/old.7z",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/1.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/a.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/x.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/o.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/conf.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/config.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/proxy.pac",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/server.cfg",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/deploy.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/build.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/install.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/site.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/webroot.zip",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/tools.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/webserver.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/htdocs.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/src.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/code.tar.gz",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "config_file": [
+      {
+        "path": "/config.inc",
+        "conditions": {
+          "status": "200",
+          "type_no": "html"
+        }
+      },
+      {
+        "path": "/config.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/db.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/conf/config.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/config.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/config/config.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/configuration.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/configs/application.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/settings.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/application.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/conf.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/app.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/config.json",
+        "conditions": {
+          "status": "200",
+          "type": "application/json",
+          "tag": "pass"
+        }
+      },
+      {
+        "path": "/application/configs/application.ini",
+        "conditions": {
+          "status": "200",
+          "tag": "[",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.idea/workspace.xml",
+        "conditions": {
+          "status": "200",
+          "tag": "<project version=",
+          "type": "xml"
+        }
+      },
+      {
+        "path": "/.idea/modules.xml",
+        "conditions": {
+          "status": "200",
+          "tag": "ProjectModuleManager",
+          "type": "xml"
+        }
+      },
+      {
+        "path": "/build.xml",
+        "conditions": {
+          "status": "200",
+          "tag": "name=",
+          "type": "xml"
+        }
+      },
+      {
+        "path": "/pom.xml",
+        "conditions": {
+          "status": "200",
+          "tag": "configuration",
+          "type": "xml"
+        }
+      },
+      {
+        "path": "/sftp-config.json",
+        "conditions": {
+          "status": "200",
+          "type": "application/json",
+          "tag": "password"
+        }
+      },
+      {
+        "path": "/config/database.yml",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "password",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/database.yml",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.conf",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/db.ini",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "tag": "passw",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/vendor/composer/installed.json",
+        "conditions": {
+          "status": "200",
+          "type": "application/json",
+          "tag": "passw",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "directory_traversal": [
+      {
+        "path": "/etc/passwd",
+        "conditions": {
+          "tag": "root:x:"
+        }
+      },
+      {
+        "path": "/proc/meminfo",
+        "conditions": {
+          "tag": "MemTotal",
+          "status": "200",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/etc/profile",
+        "conditions": {
+          "tag": "/etc/profile.d/*.sh",
+          "status": "200",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/../../../../../../../../../../../../../etc/passwd",
+        "conditions": {
+          "tag": "root:x:",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/../../../../../../../../../../../../../etc/profile",
+        "conditions": {
+          "tag": "/etc/profile.d/*.sh",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "//././././././././././././././././././././././././../../../../../../../../etc/profile",
+        "conditions": {
+          "tag": "/etc/profile.d/*.sh",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/aa/../../cc/../../bb/../../dd/../../aa/../../cc/../../bb/../../dd/../../bb/../../dd/../../bb/../../dd/../../bb/../../dd/../../ee/../../etc/profile",
+        "conditions": {
+          "status": "200",
+          "tag": "/etc/profile.d/*.sh",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/profile",
+        "conditions": {
+          "tag": "/etc/profile.d/*.sh",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd",
+        "conditions": {
+          "tag": "root:x:",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd",
+        "conditions": {
+          "tag": "root:x:",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd",
+        "conditions": {
+          "tag": "root:x:",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "git_and_svn": [
+      {
+        "path": "/.svn/entries",
+        "conditions": {
+          "status": "200",
+          "tag": "-props"
+        }
+      },
+      {
+        "path": "/.git/config",
+        "conditions": {
+          "status": "200",
+          "tag": "[core]"
+        }
+      },
+      {
+        "path": "/.git/index",
+        "conditions": {
+          "status": "200",
+          "tag": "DIRC"
+        }
+      },
+      {
+        "path": "/.git/HEAD",
+        "conditions": {
+          "status": "200",
+          "tag": "refs/heads/"
+        }
+      }
+    ],
+    "go_pprof_debug": [
+      {
+        "path": "/debug/pprof/heap?debug=1",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "tag": "heap profile"
+        }
+      },
+      {
+        "path": "/pprof/heap?debug=1",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "tag": "heap profile"
+        }
+      }
+    ],
+    "graphite_ssrf": [
+      {
+        "path": "/composer/send_email?to=orangetest@nogg&url=http://wwwwwwwwwwwww.cctvasdfasfsaasfasfs.com",
+        "conditions": {
+          "status": "200",
+          "tag": "gaierror: [Errno -2]",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "java_server_faces2": [
+      {
+        "path": "/javax.faces.resource.../WEB-INF/web.xml.jsf",
+        "conditions": {
+          "status": "200",
+          "type": "xml",
+          "tag": "<?xml",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "java_web_config_files": [
+      {
+        "path": "/WEB-INF/web.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/web.xml.bak",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "206",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/applicationContext.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/applicationContext-slave.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/config.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/spring.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/struts-config.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/struts-front-config.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/struts/struts-config.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/spring.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/struts.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/struts_manager.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/conf/datasource.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/data.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/config/applicationContext.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/applicationContext.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/conf/spring/applicationContext-datasource.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/config/db/dataSource.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/spring-cfg/applicationContext.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/dwr.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/hibernate.cfg.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/rabbitmq.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/conf/activemq.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/server.xml",
+        "conditions": {
+          "status": "200",
+          "tag": "<?xml",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/config/database.yml",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/configprops",
+        "conditions": {
+          "status": "200",
+          "tag": "serverProperties",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/database.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/web.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/log4j.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/dataBase.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/application.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/jdbc.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/db.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/conf/jdbc.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/classes/security.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/conf/database_config.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/WEB-INF/config/dbconfig",
+        "conditions": {
+          "status": "200",
+          "tag": "passw",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/monitoring",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>Monitoring JavaMelody on",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/catalina.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/logging.properties",
+        "conditions": {
+          "status": "206",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/web.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/server.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/context.xml",
+        "conditions": {
+          "tag": "<?xml",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/conf/tomcat-users.xml",
+        "conditions": {
+          "tag": "<tomcat-users>",
+          "status": "200",
+          "type": "xml",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/swagger-ui.html",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>Swagger UI</title>",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/swagger-resources",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":"
+        }
+      },
+      {
+        "path": "/api/swagger-resources",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":"
+        }
+      },
+      {
+        "path": "/api-docs",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":"
+        }
+      },
+      {
+        "path": "/v2/api-docs",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":"
+        }
+      },
+      {
+        "path": "/v3/api-docs",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":"
+        }
+      },
+      {
+        "path": "/v2/;/api-docs",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/..;/v2/api-docs",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/v2/swagger.json",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/swagger.json",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/v3/swagger.json",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/api/v2/api-docs",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/api/v2/api-docs;.css",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/api/api-docs;.css",
+        "conditions": {
+          "status": "200",
+          "tag": "swagger\":",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "phpinfo_or_apc": [
+      {
+        "path": "/phpinfo.php",
+        "conditions": {
+          "tag": "allow_url_fopen",
+          "status": "200",
+          "type": "html"
+        }
+      },
+      {
+        "path": "/info.php",
+        "conditions": {
+          "tag": "allow_url_fopen",
+          "status": "200",
+          "type": "html"
+        }
+      },
+      {
+        "path": "/pi.php",
+        "conditions": {
+          "tag": "allow_url_fopen",
+          "status": "200",
+          "type": "html"
+        }
+      },
+      {
+        "path": "/i.php",
+        "conditions": {
+          "tag": "allow_url_fopen",
+          "status": "200",
+          "type": "html"
+        }
+      },
+      {
+        "path": "/php.php",
+        "conditions": {
+          "tag": "allow_url_fopen",
+          "status": "200",
+          "type": "html"
+        }
+      },
+      {
+        "path": "/apc.php",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>APC INFO"
+        }
+      }
+    ],
+    "phpmyadmin": [
+      {
+        "path": "/phpmyadmin/index.php",
+        "conditions": {
+          "tag": "<title>phpMyAdmin",
+          "status": "200",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/phpMyAdmin/index.php",
+        "conditions": {
+          "tag": "<title>phpMyAdmin",
+          "status": "200",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/_phpmyadmin/index.php",
+        "conditions": {
+          "tag": "<title>phpMyAdmin",
+          "status": "200",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/pma/index.php",
+        "conditions": {
+          "tag": "<title>phpMyAdmin",
+          "status": "200",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "sensitive_url": [
+      {
+        "path": "/core",
+        "conditions": {
+          "status": "200",
+          "tag": "ELF",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.bash_history",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.rediscli_history",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.bashrc",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.bash_profile",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.bash_logout",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.vimrc",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.DS_Store",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream"
+        }
+      },
+      {
+        "path": "/.history",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.htpasswd",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.htpasswd.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/htpasswd.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/nohup.out",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.mysql_history",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/httpd.conf",
+        "conditions": {
+          "status": "200",
+          "type_no": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/server-status",
+        "conditions": {
+          "tag": "<title>Apache Status</title>",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/solr/",
+        "conditions": {
+          "tag": "<title>Solr Admin</title>",
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/jmx-console/HtmlAdaptor",
+        "conditions": {
+          "status": "200",
+          "tag": "JBoss Management Console",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/cacti/",
+        "conditions": {
+          "tag": "<title>Login to Cacti</title>",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/zabbix/",
+        "conditions": {
+          "tag": "<title>Zabbix</title>",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/jenkins/static/f3a41d2f/css/style.css",
+        "conditions": {
+          "type": "text/css",
+          "status": "200",
+          "tag": "jenkins-home-link",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/static/f3a41d2f/css/style.css",
+        "conditions": {
+          "type": "text/css",
+          "status": "200",
+          "tag": "jenkins-home-link",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/script",
+        "conditions": {
+          "status": "200",
+          "tag": "Type in an arbitrary",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/jenkins/script",
+        "conditions": {
+          "status": "200",
+          "tag": "Type in an arbitrary",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/exit",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>POST required</title>",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/memadmin/index.php",
+        "conditions": {
+          "tag": "<title>Login - MemAdmin",
+          "status": "200",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/ganglia/",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>Ganglia",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/install.txt",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "flag": "root_only",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/INSTALL.TXT",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "flag": "root_only",
+          "tag": "passw"
+        }
+      },
+      {
+        "path": "/key",
+        "conditions": {
+          "status": "200",
+          "type_no": "html"
+        }
+      },
+      {
+        "path": "/keys",
+        "conditions": {
+          "status": "200",
+          "type_no": "html"
+        }
+      },
+      {
+        "path": "/nstatus",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>Nginx http upstream check status</title>"
+        }
+      },
+      {
+        "path": "/status",
+        "conditions": {
+          "status": "200",
+          "tag": "<title>nginx vhost traffic status monitor</title>"
+        }
+      },
+      {
+        "path": "/connections",
+        "conditions": {
+          "status": "200",
+          "type": "text/html",
+          "tag": "server_connection_count"
+        }
+      },
+      {
+        "path": "/metrics",
+        "conditions": {
+          "status": "200",
+          "tag": "version",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/metrics?pretty=true",
+        "conditions": {
+          "status": "200",
+          "tag": "version",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.;/metrics/metrics",
+        "conditions": {
+          "status": "200",
+          "tag": "version",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/;/metrics/metrics?pretty=true",
+        "conditions": {
+          "status": "200",
+          "tag": "version",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/metrics/metrics?pretty=true",
+        "conditions": {
+          "status": "200",
+          "tag": "version",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/threads",
+        "conditions": {
+          "status": "200",
+          "tag": "state=",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.;/metrics/threads",
+        "conditions": {
+          "status": "200",
+          "tag": "state=",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/;/metrics/threads",
+        "conditions": {
+          "status": "200",
+          "tag": "state=",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/metrics/threads",
+        "conditions": {
+          "status": "200",
+          "tag": "state=",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/api//actuator/metrics",
+        "conditions": {
+          "status": "200",
+          "tag": "state=",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/prometheus/metrics",
+        "conditions": {
+          "status": "200",
+          "tag": "application=",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/prometheus",
+        "conditions": {
+          "status": "200",
+          "tag": "application="
+        }
+      },
+      {
+        "path": "/eureka/apps",
+        "conditions": {
+          "status": "200",
+          "tag": "<app>",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "shell_script_disclosure": [
+      {
+        "path": "/install.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/deploy.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/upload.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/setup.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/backup.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/rsync.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/sync.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/test.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      },
+      {
+        "path": "/run.sh",
+        "conditions": {
+          "status": "206",
+          "flag": "root_only",
+          "tag": "'#!/'",
+          "type": "text"
+        }
+      }
+    ],
+    "source_code_disclosure": [
+      {
+        "path": "/index.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.index.php.swp",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/config.inc.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/config.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.config.inc.php.swp",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/config/.config.php.swp",
+        "conditions": {
+          "status": "200",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.config.php.swp",
+        "conditions": {
+          "status": "200",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/application/config/config.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/application/config/database.php.bak",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.settings.php.swp",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.database.php.swp",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.db.php.swp",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      },
+      {
+        "path": "/.mysql.php.swp",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "tag": "<?php"
+        }
+      }
+    ],
+    "ssh_sensitive_file": [
+      {
+        "path": "/.ssh/known_hosts",
+        "conditions": {
+          "status": "206",
+          "type": "application/octet-stream",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.ssh/id_rsa",
+        "conditions": {
+          "status": "200",
+          "tag": "PRIVATE KEY-",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/id_rsa",
+        "conditions": {
+          "status": "200",
+          "tag": "PRIVATE KEY-",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.ssh/id_rsa.pub",
+        "conditions": {
+          "status": "200",
+          "tag": "ssh-rsa",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.ssh/id_dsa",
+        "conditions": {
+          "status": "200",
+          "tag": "PRIVATE KEY-",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/id_dsa",
+        "conditions": {
+          "status": "200",
+          "tag": "PRIVATE KEY-",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.ssh/id_dsa.pub",
+        "conditions": {
+          "status": "200",
+          "tag": "ssh-dss",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/.ssh/authorized_keys",
+        "conditions": {
+          "status": "200",
+          "tag": "ssh-rsa",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "test_page": [
+      {
+        "path": "/test.php",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test2.php",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test.html",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test2.html",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test.jsp",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test.txt",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/test2.txt",
+        "conditions": {
+          "status": "200",
+          "type": "text/plain",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/debug.php",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/a.php",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      },
+      {
+        "path": "/1.php",
+        "conditions": {
+          "status": "200",
+          "type": "html",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "tomcat_manager": [
+      {
+        "path": "/manager/html",
+        "conditions": {
+          "status": "401",
+          "flag": "root_only"
+        }
+      }
+    ],
+    "web_editors": [
+      {
+        "path": "/fckeditor/_samples/default.html",
+        "conditions": {
+          "tag": "<title>FCKeditor",
+          "type": "html"
+        }
+      },
+      {
+        "path": "/ckeditor/samples/",
+        "conditions": {
+          "tag": "<title>CKEditor Samples</title>"
+        }
+      },
+      {
+        "path": "/editor/ckeditor/samples/",
+        "conditions": {
+          "tag": "<title>CKEditor Samples</title>"
+        }
+      },
+      {
+        "path": "/ckeditor/samples/sample_posteddata.php",
+        "conditions": {
+          "tag": "http://ckeditor.com</a>"
+        }
+      },
+      {
+        "path": "/editor/ckeditor/samples/sample_posteddata.php",
+        "conditions": {
+          "tag": "http://ckeditor.com</a>"
+        }
+      },
+      {
+        "path": "/ueditor/ueditor.all.js",
+        "conditions": {
+          "status": "200",
+          "tag": "UE.version"
+        }
+      },
+      {
+        "path": "/ueditor/php/getRemoteImage.php",
+        "conditions": {
+          "tag": "'tip':'",
+          "status": "200"
+        }
+      }
+    ]
+  },
+  "paths": [
+    "/",
+    "/%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd",
+    "/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/profile",
+    "/..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd",
+    "/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd",
+    "/../../../../../../../../../../../../../etc/passwd",
+    "/../../../../../../../../../../../../../etc/profile",
+    "/..;/v2/api-docs",
+    "/.;/metrics/metrics",
+    "/.;/metrics/threads",
+    "/.DS_Store",
+    "/.bash_history",
+    "/.bash_logout",
+    "/.bash_profile",
+    "/.bashrc",
+    "/.config.inc.php.swp",
+    "/.config.php.swp",
+    "/.database.php.swp",
+    "/.db.php.swp",
+    "/.git/HEAD",
+    "/.git/config",
+    "/.git/index",
+    "/.history",
+    "/.htpasswd",
+    "/.htpasswd.bak",
+    "/.idea/modules.xml",
+    "/.idea/workspace.xml",
+    "/.index.php.swp",
+    "/.mysql.php.swp",
+    "/.mysql_history",
+    "/.rediscli_history",
+    "/.settings.php.swp",
+    "/.ssh/authorized_keys",
+    "/.ssh/id_dsa",
+    "/.ssh/id_dsa.pub",
+    "/.ssh/id_rsa",
+    "/.ssh/id_rsa.pub",
+    "/.ssh/known_hosts",
+    "/.svn/entries",
+    "/.vimrc",
+    "//././././././././././././././././././././././././../../../../../../../../etc/profile",
+    "/1.php",
+    "/1.tar.gz",
+    "/;/metrics/metrics?pretty=true",
+    "/;/metrics/threads",
+    "/INSTALL.TXT",
+    "/README",
+    "/WEB-INF/applicationContext-slave.xml",
+    "/WEB-INF/applicationContext.xml",
+    "/WEB-INF/classes/application.properties",
+    "/WEB-INF/classes/applicationContext.xml",
+    "/WEB-INF/classes/conf/datasource.xml",
+    "/WEB-INF/classes/conf/jdbc.properties",
+    "/WEB-INF/classes/conf/spring/applicationContext-datasource.xml",
+    "/WEB-INF/classes/config/applicationContext.xml",
+    "/WEB-INF/classes/data.xml",
+    "/WEB-INF/classes/dataBase.properties",
+    "/WEB-INF/classes/db.properties",
+    "/WEB-INF/classes/hibernate.cfg.xml",
+    "/WEB-INF/classes/jdbc.properties",
+    "/WEB-INF/classes/rabbitmq.xml",
+    "/WEB-INF/classes/security.properties",
+    "/WEB-INF/classes/spring.xml",
+    "/WEB-INF/classes/struts.xml",
+    "/WEB-INF/classes/struts_manager.xml",
+    "/WEB-INF/conf/activemq.xml",
+    "/WEB-INF/conf/database_config.properties",
+    "/WEB-INF/config.xml",
+    "/WEB-INF/config/db/dataSource.xml",
+    "/WEB-INF/config/dbconfig",
+    "/WEB-INF/database.properties",
+    "/WEB-INF/dwr.xml",
+    "/WEB-INF/log4j.properties",
+    "/WEB-INF/spring-cfg/applicationContext.xml",
+    "/WEB-INF/spring.xml",
+    "/WEB-INF/struts-config.xml",
+    "/WEB-INF/struts-front-config.xml",
+    "/WEB-INF/struts/struts-config.xml",
+    "/WEB-INF/web.properties",
+    "/WEB-INF/web.xml",
+    "/WEB-INF/web.xml.bak",
+    "/_phpmyadmin/index.php",
+    "/a.php",
+    "/a.tar.gz",
+    "/aa/../../cc/../../bb/../../dd/../../aa/../../cc/../../bb/../../dd/../../bb/../../dd/../../bb/../../dd/../../bb/../../dd/../../ee/../../etc/profile",
+    "/admin.rar",
+    "/admin.sql",
+    "/admin.tar.bz2",
+    "/admin.tar.gz",
+    "/admin.tgz",
+    "/admin.zip",
+    "/apc.php",
+    "/api-docs",
+    "/api//actuator/metrics",
+    "/api/api-docs;.css",
+    "/api/swagger-resources",
+    "/api/v2/api-docs",
+    "/api/v2/api-docs;.css",
+    "/app.ini",
+    "/application.ini",
+    "/application/config/config.php.bak",
+    "/application/config/database.php.bak",
+    "/application/configs/application.ini",
+    "/back.tar.bz2",
+    "/backup.rar",
+    "/backup.sh",
+    "/backup.sql",
+    "/backup.sql.gz",
+    "/backup.tar.gz",
+    "/backup.tgz",
+    "/backup.zip",
+    "/build.tar.gz",
+    "/build.xml",
+    "/cacti/",
+    "/changelog.txt",
+    "/ckeditor/samples/",
+    "/ckeditor/samples/sample_posteddata.php",
+    "/code.tar.gz",
+    "/composer/send_email?to=orangetest@nogg&url=http://wwwwwwwwwwwww.cctvasdfasfsaasfasfs.com",
+    "/conf.ini",
+    "/conf.tar.gz",
+    "/conf.zip",
+    "/conf/catalina.properties",
+    "/conf/conf.zip",
+    "/conf/config.ini",
+    "/conf/context.xml",
+    "/conf/logging.properties",
+    "/conf/server.xml",
+    "/conf/tomcat-users.xml",
+    "/conf/web.xml",
+    "/config.inc",
+    "/config.inc.php.bak",
+    "/config.ini",
+    "/config.json",
+    "/config.php.bak",
+    "/config.tar.gz",
+    "/config/.config.php.swp",
+    "/config/config.ini",
+    "/config/database.yml",
+    "/configprops",
+    "/configs/application.ini",
+    "/configuration.ini",
+    "/connections",
+    "/core",
+    "/data.rar",
+    "/data.sql",
+    "/data.sql.gz",
+    "/data.tar.bz2",
+    "/data.tar.gz",
+    "/data.tgz",
+    "/data.zip",
+    "/database.rar",
+    "/database.sql",
+    "/database.sql.gz",
+    "/database.tar.bz2",
+    "/database.tar.gz",
+    "/database.tgz",
+    "/database.yml",
+    "/database.zip",
+    "/db.conf",
+    "/db.ini",
+    "/db.php.bak",
+    "/db.rar",
+    "/db.sql",
+    "/db.sql.gz",
+    "/db.sqlite",
+    "/db.tar.bz2",
+    "/db.tar.gz",
+    "/db.tgz",
+    "/db.zip",
+    "/debug.php",
+    "/debug/pprof/heap?debug=1",
+    "/deploy.sh",
+    "/deploy.tar.gz",
+    "/dump.sql",
+    "/dump.sql.gz",
+    "/editor/ckeditor/samples/",
+    "/editor/ckeditor/samples/sample_posteddata.php",
+    "/etc/passwd",
+    "/etc/profile",
+    "/eureka/apps",
+    "/exit",
+    "/fckeditor/_samples/default.html",
+    "/ftp.rar",
+    "/ftp.tar.bz2",
+    "/ftp.tar.gz",
+    "/ftp.tgz",
+    "/ftp.zip",
+    "/ganglia/",
+    "/htdocs.tar.gz",
+    "/htpasswd.bak",
+    "/httpd.conf",
+    "/i.php",
+    "/id_dsa",
+    "/id_rsa",
+    "/index.7z",
+    "/index.bak",
+    "/index.php.bak",
+    "/index.rar",
+    "/index.tar.bz2",
+    "/index.tar.gz",
+    "/index.tar.tz",
+    "/index.zip",
+    "/info.php",
+    "/install.sh",
+    "/install.tar.gz",
+    "/install.txt",
+    "/javax.faces.resource.../WEB-INF/web.xml.jsf",
+    "/jenkins/script",
+    "/jenkins/static/f3a41d2f/css/style.css",
+    "/jmx-console/HtmlAdaptor",
+    "/key",
+    "/keys",
+    "/manager/html",
+    "/memadmin/index.php",
+    "/metrics",
+    "/metrics/metrics?pretty=true",
+    "/metrics/threads",
+    "/metrics?pretty=true",
+    "/monitoring",
+    "/nohup.out",
+    "/nstatus",
+    "/o.tar.gz",
+    "/old.7z",
+    "/old.rar",
+    "/old.tar.bz2",
+    "/old.tar.gz",
+    "/old.tgz",
+    "/old.zip",
+    "/output.tar.gz",
+    "/package.rar",
+    "/package.tar.bz2",
+    "/package.tar.gz",
+    "/package.tgz",
+    "/package.zip",
+    "/php.php",
+    "/phpMyAdmin/index.php",
+    "/phpinfo.php",
+    "/phpmyadmin/index.php",
+    "/pi.php",
+    "/pma/index.php",
+    "/pom.xml",
+    "/pprof/heap?debug=1",
+    "/proc/meminfo",
+    "/prometheus",
+    "/prometheus/metrics",
+    "/proxy.pac",
+    "/readme",
+    "/readme.html",
+    "/readme.md",
+    "/rsync.sh",
+    "/run.sh",
+    "/script",
+    "/server-status",
+    "/server.cfg",
+    "/server.xml",
+    "/settings.ini",
+    "/setup.sh",
+    "/sftp-config.json",
+    "/site.tar.gz",
+    "/solr/",
+    "/sql.7z",
+    "/sql.rar",
+    "/sql.tar.bz2",
+    "/sql.tar.gz",
+    "/sql.tgz",
+    "/sql.zip",
+    "/src.tar.gz",
+    "/static/f3a41d2f/css/style.css",
+    "/status",
+    "/swagger-resources",
+    "/swagger-ui.html",
+    "/swagger.json",
+    "/sync.sh",
+    "/temp.rar",
+    "/temp.tar.bz2",
+    "/temp.tar.gz",
+    "/temp.tgz",
+    "/temp.zip",
+    "/test.html",
+    "/test.jsp",
+    "/test.php",
+    "/test.rar",
+    "/test.sh",
+    "/test.sql",
+    "/test.tar.bz2",
+    "/test.tar.gz",
+    "/test.tgz",
+    "/test.txt",
+    "/test.zip",
+    "/test2.html",
+    "/test2.php",
+    "/test2.txt",
+    "/threads",
+    "/tmp.rar",
+    "/tmp.tar.bz2",
+    "/tmp.tar.gz",
+    "/tmp.tgz",
+    "/tmp.zip",
+    "/tools.tar.gz",
+    "/ueditor/php/getRemoteImage.php",
+    "/ueditor/ueditor.all.js",
+    "/update.sql",
+    "/upload.rar",
+    "/upload.sh",
+    "/upload.tar.bz2",
+    "/upload.tar.gz",
+    "/upload.tgz",
+    "/upload.zip",
+    "/v2/;/api-docs",
+    "/v2/api-docs",
+    "/v2/swagger.json",
+    "/v3/api-docs",
+    "/v3/swagger.json",
+    "/vendor/composer/installed.json",
+    "/web.rar",
+    "/web.tar.bz2",
+    "/web.tar.gz",
+    "/web.tgz",
+    "/web.zip",
+    "/webroot.zip",
+    "/webserver.tar.gz",
+    "/website.rar",
+    "/website.tar.bz2",
+    "/website.tar.gz",
+    "/website.tgz",
+    "/website.zip",
+    "/www.rar",
+    "/www.tar.bz2",
+    "/www.tar.gz",
+    "/www.tgz",
+    "/www.zip",
+    "/wwwroot.rar",
+    "/wwwroot.tar.bz2",
+    "/wwwroot.tar.gz",
+    "/wwwroot.tgz",
+    "/wwwroot.zip",
+    "/x.tar.gz",
+    "/zabbix/"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "source": "URLFinder config/config.go InfoFind regex",
+  "description": "Sensitive information detection regex patterns from URLFinder",
+  "total": 5,
+  "patterns": {
+    "phone": {
+      "regex": "['\"](1(3([0-35-9]\\d|4[1-8])|4[14-9]\\d|5([\\d]\\d|7[1-79])|66\\d|7[2-35-8]\\d|8\\d{2}|9[89]\\d)\\d{7})['\"]",
+      "description": "Chinese mobile phone number"
+    },
+    "email": {
+      "regex": "['\"]([\\w!#$%&'*+=?^_`{|}~-]+(?:\\.[\\w!#$%&'*+=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?)['\"]",
+      "description": "Email address (RFC 5322 compliant)"
+    },
+    "idcard": {
+      "regex": "['\"]((\\d{8}(0\\d|10|11|12)([0-2]\\d|30|31)\\d{3}$)|(\\d{6}(18|19|20)\\d{2}(0[1-9]|10|11|12)([0-2]\\d|30|31)\\d{3}(\\d|X|x)))['\"]",
+      "description": "Chinese ID card number (18 digits)"
+    },
+    "jwt": {
+      "regex": "['\"](ey[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9._-]{10,}|ey[A-Za-z0-9_\\/+-]{10,}\\.[A-Za-z0-9._\\/+-]{10,})['\"]",
+      "description": "JWT token (starts with 'ey')"
+    },
+    "other": {
+      "regex": "(access.{0,1}key|access.{0,1}Key|access.{0,1}Id|access.{0,1}id|.{0,5}密码|.{0,5}账号|默认.{0,5}|加密|解密|password:.{0,10}|username:.{0,10})",
+      "description": "Other sensitive fields: access keys, passwords, usernames, encryption"
+    }
+  }
+}

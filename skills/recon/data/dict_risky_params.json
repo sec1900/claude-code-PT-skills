@@ -1,0 +1,7 @@
+{
+  "source": "URLFinder config/config.go Risks",
+  "description": "Risky operation keywords for parameter fuzzing and IDOR/BAC testing",
+  "total": 5,
+  "keywords": ["remove", "delete", "insert", "update", "logout"],
+  "usage": "Use these keywords in parameter names when testing for IDOR/privilege escalation/unauthorized operations"
+}

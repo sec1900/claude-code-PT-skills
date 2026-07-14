@@ -1,0 +1,19 @@
+{
+  "source": "URLFinder config/config.go JsFuzzPath",
+  "description": "Common JS filenames used for JS file discovery/fuzzing",
+  "total": 11,
+  "paths": [
+    "login.js",
+    "app.js",
+    "main.js",
+    "config.js",
+    "admin.js",
+    "info.js",
+    "open.js",
+    "user.js",
+    "input.js",
+    "list.js",
+    "upload.js"
+  ],
+  "usage": "Append these common JS filenames to target paths/domains for JS file discovery"
+}

@@ -1,0 +1,26 @@
+{
+  "source": "Packer-Fuzzer Lib/vuln/UploadTest.py",
+  "description": "File upload extension bypass variants extracted from Packer-Fuzzer upload fuzzing module",
+  "total": 45,
+  "extensions": [
+    "asp;.jpg", "asp.jpg", "asp;jpg", "asp/1.jpg", "asp{}.jpg", "asp .jpg",
+    "asp_.jpg", "asa", "cer", "cdx", "ashx", "asmx", "xml", "htr", "asax",
+    "asaspp", "asp;+2.jpg", "asPx", "aspx .jpg", "aspx_.jpg", "aspx;+2.jpg",
+    "asaspxpx", "php1", "php2", "php3", "php4", "php5", "pHp",
+    "php .jpg", "php_.jpg", "php.jpg", "php.  .jpg",
+    "jpg/.php", "php.123", "jpg/php", "jpg/1.php", "jpg{}.php",
+    "php{}.jpg", "php:1.jpg", "php::$DATA", "php::$DATA......",
+    "ph\np", ".jsp.jpg.jsp", "jspa", "jsps", "jspx", "jspf",
+    "jsp .jpg", "jsp_.jpg"
+  ],
+  "bypass_techniques": [
+    "semicolon_truncation (asp;.jpg → IIS parses as .asp)",
+    "null_byte_injection (php%00.jpg → backend sees .php)",
+    "double_extension (shell.php.jpg → Apache .php takes precedence)",
+    "NTFS_stream (php::$DATA → Windows NTFS ADS)",
+    "case_mixing (pHp → case-insensitive filter bypass)",
+    "trailing_space (php .jpg → trim inconsistency)",
+    "extension_prepend (jpg/.php → parser confusion)",
+    "newline_injection (ph\\np → filter sees newline)"
+  ]
+}

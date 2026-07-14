@@ -1,0 +1,1431 @@
+{
+  "source": "phpggc gadgetchains/",
+  "total_chains": 152,
+  "total_frameworks": 42,
+  "framework_stats": {
+    "Laravel": 23,
+    "Symfony": 19,
+    "Monolog": 10,
+    "CodeIgniter4": 9,
+    "Drupal": 7,
+    "SwiftMailer": 7,
+    "ThinkPHP": 6,
+    "ZendFramework": 6,
+    "OpenCart": 5,
+    "Doctrine": 4,
+    "Drupal7": 4,
+    "PHPExcel": 4,
+    "Guzzle": 3,
+    "MediaWiki": 3,
+    "Sulu": 3,
+    "CakePHP": 2,
+    "Dompdf": 2,
+    "Laminas": 2,
+    "Magento": 2,
+    "Magento2": 2,
+    "PHPCSFixer": 2,
+    "Smarty": 2,
+    "Spiral": 2,
+    "TCPDF": 2,
+    "WordPress": 2,
+    "Yii": 2,
+    "Yii2": 2,
+    "Grav": 1,
+    "Horde": 1,
+    "Joomla": 1,
+    "Kohana": 1,
+    "Phalcon": 1,
+    "Phing": 1,
+    "PHPSecLib": 1,
+    "phpThumb": 1,
+    "PHPWord": 1,
+    "Plates": 1,
+    "Silverstripe": 1,
+    "Slim": 1,
+    "Snappy": 1,
+    "Typo3": 1,
+    "vBulletin": 1
+  },
+  "type_stats": {
+    "RCE": 89,
+    "FD": 31,
+    "FW": 19,
+    "FR": 3,
+    "SQLI": 3,
+    "SSRF": 3,
+    "AT": 1,
+    "PsySH": 1,
+    "XXE": 1,
+    "INFO": 1
+  },
+  "chains": {
+    "CakePHP|RCE|1": {
+      "framework": "CakePHP",
+      "type": "RCE",
+      "chain": "1",
+      "version": "? <= 3.9.6",
+      "vector": "__destruct",
+      "author": "MoonBack",
+      "info": ""
+    },
+    "CakePHP|RCE|2": {
+      "framework": "CakePHP",
+      "type": "RCE",
+      "chain": "2",
+      "version": "? <= 4.2.3",
+      "vector": "__destruct",
+      "author": "MoonBack",
+      "info": ""
+    },
+    "CodeIgniter4|FD|1": {
+      "framework": "CodeIgniter4",
+      "type": "FD",
+      "chain": "1",
+      "version": "<= 4.3.6",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": ""
+    },
+    "CodeIgniter4|FD|2": {
+      "framework": "CodeIgniter4",
+      "type": "FD",
+      "chain": "2",
+      "version": "<= 4.3.7",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": ""
+    },
+    "CodeIgniter4|FR|1": {
+      "framework": "CodeIgniter4",
+      "type": "FR",
+      "chain": "1",
+      "version": "4.0.0 <= 4.3.6",
+      "vector": "__toString",
+      "author": "byq",
+      "info": "include()"
+    },
+    "CodeIgniter4|RCE|1": {
+      "framework": "CodeIgniter4",
+      "type": "RCE",
+      "chain": "1",
+      "version": "4.0.2",
+      "vector": "__destruct",
+      "author": "eboda",
+      "info": ""
+    },
+    "CodeIgniter4|RCE|2": {
+      "framework": "CodeIgniter4",
+      "type": "RCE",
+      "chain": "2",
+      "version": "4.0.0-rc.4 <= 4.3.6",
+      "vector": "__destruct",
+      "author": "eboda",
+      "info": ""
+    },
+    "CodeIgniter4|RCE|3": {
+      "framework": "CodeIgniter4",
+      "type": "RCE",
+      "chain": "3",
+      "version": "4.0.4 <= 4.4.3",
+      "vector": "__destruct",
+      "author": "Firebasky and AhmadShauqi",
+      "info": ""
+    },
+    "CodeIgniter4|RCE|4": {
+      "framework": "CodeIgniter4",
+      "type": "RCE",
+      "chain": "4",
+      "version": "4.0.0-beta.1 <= 4.0.0-rc.4",
+      "vector": "__destruct",
+      "author": "eboda",
+      "info": ""
+    },
+    "CodeIgniter4|RCE|5": {
+      "framework": "CodeIgniter4",
+      "type": "RCE",
+      "chain": "5",
+      "version": "-4.1.3+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "CodeIgniter4|RCE|6": {
+      "framework": "CodeIgniter4",
+      "type": "RCE",
+      "chain": "6",
+      "version": "-4.1.3 <= 4.2.10+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Doctrine|FW|1": {
+      "framework": "Doctrine",
+      "type": "FW",
+      "chain": "1",
+      "version": "?",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": "We do not have full control of the path. If you enter\n        /var/www/toto/shell.php as the remote_path, it will be converted to\n        /var/www/toto/e3/5b737464436c61737324434c4153534d455441444154415d5b315d.php.\n        Only the extension and base path are kept."
+    },
+    "Doctrine|FW|2": {
+      "framework": "Doctrine",
+      "type": "FW",
+      "chain": "2",
+      "version": "2.3.0 <= 2.4.0 v2.5.0 <= 2.8.5",
+      "vector": "__destruct",
+      "author": "crlf",
+      "info": "Creates a side directory"
+    },
+    "Doctrine|RCE|1": {
+      "framework": "Doctrine",
+      "type": "RCE",
+      "chain": "1",
+      "version": "1.5.1 <= 2.7.2",
+      "vector": "__destruct",
+      "author": "Remsio",
+      "info": "Based on package doctrine/doctrine-bundle, the Symfony bundle for doctrine.\n        The chain is based on one chain to write, and on another one to include.\n        Be careful, the POP chain differs depending on the PHP version"
+    },
+    "Doctrine|RCE|2": {
+      "framework": "Doctrine",
+      "type": "RCE",
+      "chain": "2",
+      "version": "1.11.0 <= 2.3.2",
+      "vector": "__destruct",
+      "author": "Remsio",
+      "info": "Based on package doctrine/doctrine-bundle, the Symfony bundle for\n        doctrine. This chain exploits : $schemaAssetFilter($assetName) from\n        SchemaAssetsFilterManager __invoke function."
+    },
+    "Dompdf|FD|1": {
+      "framework": "Dompdf",
+      "type": "FD",
+      "chain": "1",
+      "version": "1.1.1 <= ?",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": "Note that some files may not be removed (depends on permissions).\n        Target versions: commit a13af8d4bdab280bf8c48dbc23a4d51cac6af202, 1 Dec 2021 (~v1.1.1) <= exploitable"
+    },
+    "Dompdf|FD|2": {
+      "framework": "Dompdf",
+      "type": "FD",
+      "chain": "2",
+      "version": "? < 1.1.1",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": "Note that some files may not be removed (depends on permissions)\n        Target versions: exploitable < commit 61c86c04d2a483187ff9f6a73c50d42669be5b4d, 1 Dec 2021 (~v1.1.1)"
+    },
+    "Drupal|AT|1": {
+      "framework": "Drupal",
+      "type": "AT",
+      "chain": "1",
+      "version": ">= 8.0.0 < 10.2.11 || >= 10.3.0 < 10.3.9 || >= 11.0.0 < 11.0.8",
+      "vector": "__wakeup",
+      "author": "mcdruid",
+      "info": "See: https://www.drupal.org/sa-core-2024-007\n        Updates the email address for user #1. The user name is also set to"
+    },
+    "Drupal|FD|1": {
+      "framework": "Drupal",
+      "type": "FD",
+      "chain": "1",
+      "version": ">= 10.3.0 < 10.3.9 || >= 11.0.0 < 11.0.8",
+      "vector": "__wakeup",
+      "author": "mcdruid",
+      "info": "See: https://www.drupal.org/sa-core-2024-006"
+    },
+    "Drupal|PsySH|1": {
+      "framework": "Drupal",
+      "type": "PsySH",
+      "chain": "1",
+      "version": ">= v0.9.0 < v0.12.6",
+      "vector": "__wakeup",
+      "author": "mcdruid",
+      "info": "See: https://www.drupal.org/sa-core-2024-007\n        This requires PsySH which is bundled with drush. It is common but not\n        mandatory for drush to be installed along with Drupal core. Other PHP\n        functions could be executed, but no parameters can be passed."
+    },
+    "Drupal|RCE|1": {
+      "framework": "Drupal",
+      "type": "RCE",
+      "chain": "1",
+      "version": "-8.9.6 <= 9.5.10+",
+      "vector": "__destruct",
+      "author": "rioru",
+      "info": "Guzzle and Laminas are required for this chain but are bundled by default in Drupal.\n    Uses a __destruct() to call __toString() and finally lands in a call_user_func_array after a few call jumps.\n    Tested on drupal versions from 8.9.6 up to 9.5.10 (latest), might work on slightly older versions."
+    },
+    "Drupal|SQLI|1": {
+      "framework": "Drupal",
+      "type": "SQLI",
+      "chain": "1",
+      "version": ">= 8.0.0 < 10.2.11 || >= 10.3.0 < 10.3.9",
+      "vector": "__wakeup",
+      "author": "mcdruid",
+      "info": "See: https://gist.github.com/paul-axe/2a384bb5f2d430dd3b63b2484af960f4\n    See: https://www.drupal.org/sa-core-2024-008\n    Drupal/SSRF1 can be used to extract db credentials for SQL injection."
+    },
+    "Drupal|SSRF|1": {
+      "framework": "Drupal",
+      "type": "SSRF",
+      "chain": "1",
+      "version": ">= 8.0.0 < 10.2.11 || >= 10.3.0 < 10.3.9",
+      "vector": "__wakeup",
+      "author": "mcdruid",
+      "info": "See: https://gist.github.com/paul-axe/2a384bb5f2d430dd3b63b2484af960f4\n    See: https://www.drupal.org/sa-core-2024-008\n    https://portswigger.net/web-security/xxe/blind#exploiting-blind-xxe-to-exfiltrate-data-out-of-band"
+    },
+    "Drupal|XXE|1": {
+      "framework": "Drupal",
+      "type": "XXE",
+      "chain": "1",
+      "version": ">= 8.0.0 < 10.2.11 || >= 10.3.0 < 10.3.9",
+      "vector": "__wakeup",
+      "author": "mcdruid",
+      "info": "See: https://gist.github.com/paul-axe/2a384bb5f2d430dd3b63b2484af960f4\n    See: https://www.drupal.org/sa-core-2024-008\n    This version accepts a local XML file path instead of a URI.\n    Example payload file could contain:\n    <!DOCTYPE foo [<!ENTITY xxe SYSTEM"
+    },
+    "Drupal7|FD|1": {
+      "framework": "Drupal7",
+      "type": "FD",
+      "chain": "1",
+      "version": "7.0 <= 7.78",
+      "vector": "__destruct",
+      "author": "rreiss",
+      "info": "Note that some files may not be removed (depends on permissions)"
+    },
+    "Drupal7|RCE|1": {
+      "framework": "Drupal7",
+      "type": "RCE",
+      "chain": "1",
+      "version": "7.0.8 <= 7.98",
+      "vector": "__destruct",
+      "author": "Blaklis",
+      "info": "You will need to post form_build_id=DrupalRCE to /?q=system/ajax once the payload is unserialized"
+    },
+    "Drupal7|SQLI|1": {
+      "framework": "Drupal7",
+      "type": "SQLI",
+      "chain": "1",
+      "version": "<= 7.101",
+      "vector": "__destruct",
+      "author": "paul-axe, mcdruid",
+      "info": "See: https://gist.github.com/paul-axe/2a384bb5f2d430dd3b63b2484af960f4\n    See: https://www.drupal.org/sa-core-2024-008\n    Drupal7/SSRF1 can be used to extract db credentials for SQL injection."
+    },
+    "Drupal7|SSRF|1": {
+      "framework": "Drupal7",
+      "type": "SSRF",
+      "chain": "1",
+      "version": "<= 7.101",
+      "vector": "__destruct",
+      "author": "paul-axe, mcdruid",
+      "info": "See: https://gist.github.com/paul-axe/2a384bb5f2d430dd3b63b2484af960f4\n    See: See: https://www.drupal.org/sa-core-2024-008\n    https://portswigger.net/web-security/xxe/blind#exploiting-blind-xxe-to-exfiltrate-data-out-of-band"
+    },
+    "Grav|FD|1": {
+      "framework": "Grav",
+      "type": "FD",
+      "chain": "1",
+      "version": "1.4.0 <= 1.7.48+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "https://github.com/getgrav/grav/pull/3874"
+    },
+    "Guzzle|FW|1": {
+      "framework": "Guzzle",
+      "type": "FW",
+      "chain": "1",
+      "version": "4.0.0-rc.2 <= 7.5.0+",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Guzzle|INFO|1": {
+      "framework": "Guzzle",
+      "type": "INFO",
+      "chain": "1",
+      "version": "6.0.0 <= 6.3.2",
+      "vector": "__destruct",
+      "author": "erwan_lr",
+      "info": "This chain requires GuzzleHttp\\Psr7 < 1.5.0, because FnStream cannot be\n        deserialized afterwards.\n        See https://github.com/ambionics/phpggc/issues/34"
+    },
+    "Guzzle|RCE|1": {
+      "framework": "Guzzle",
+      "type": "RCE",
+      "chain": "1",
+      "version": "6.0.0 <= 6.3.2",
+      "vector": "__destruct",
+      "author": "proclnas",
+      "info": "This chain requires GuzzleHttp\\Psr7 < 1.5.0, because FnStream cannot be\n        deserialized afterwards.\n        See https://github.com/ambionics/phpggc/issues/34"
+    },
+    "Horde|RCE|1": {
+      "framework": "Horde",
+      "type": "RCE",
+      "chain": "1",
+      "version": "<= 5.2.22",
+      "vector": "__destruct",
+      "author": "mr_me",
+      "info": "This chain was used against 34 different 0day endpoints targeting Horde v5.2.22. Other versions are probably affected\n        See https://srcincite.io/blog/2020/08/19/a-smorgashorde-of-vulnerabilities-a-comparative-analysis-of-discovery.html"
+    },
+    "Joomla|FW|1": {
+      "framework": "Joomla",
+      "type": "FW",
+      "chain": "1",
+      "version": "3.9.0 <= 5.2.1",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "Fixed in https://github.com/joomla/joomla-cms/pull/44428\n    which is included in the 5.2.2 release."
+    },
+    "Kohana|FR|1": {
+      "framework": "Kohana",
+      "type": "FR",
+      "chain": "1",
+      "version": "3.*",
+      "vector": "__toString",
+      "author": "byq",
+      "info": "include()"
+    },
+    "Laminas|FD|1": {
+      "framework": "Laminas",
+      "type": "FD",
+      "chain": "1",
+      "version": "<= 2.11.2",
+      "vector": "__destruct",
+      "author": "MrTuxracer",
+      "info": ""
+    },
+    "Laminas|FW|1": {
+      "framework": "Laminas",
+      "type": "FW",
+      "chain": "1",
+      "version": "2.8.0 <= 3.0.x-dev",
+      "vector": "__destruct",
+      "author": "swapgs",
+      "info": "This chain requires both laminas/laminas-cache (tested up to 3.0.x-dev) and\n        laminas/laminas-cache-storage-adapter-filesystem (a default dependency) to work.\n        Asking for a remote filename without extension will create a file with a trailing dot \n        (e.g. asking for `foo` will create `foo.`)"
+    },
+    "Laravel|FD|1": {
+      "framework": "Laravel",
+      "type": "FD",
+      "chain": "1",
+      "version": "*",
+      "vector": "__destruct",
+      "author": "Maxime Rinaudo",
+      "info": "Requires the Laravel Pail plugin."
+    },
+    "Laravel|RCE|1": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "1",
+      "version": "5.4.27",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Laravel|RCE|10": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "10",
+      "version": "5.6.0 <= 9.1.8+",
+      "vector": "__toString",
+      "author": "Arjun Shibu (twitter.com/0xsegf), 0xcrypto",
+      "info": ""
+    },
+    "Laravel|RCE|11": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "11",
+      "version": "5.4.0 <= 9.1.8+",
+      "vector": "__destruct",
+      "author": "1nhann",
+      "info": ""
+    },
+    "Laravel|RCE|12": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "12",
+      "version": "5.8.35, 7.0.0, 9.3.10",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": "According to different version you may need to modify the"
+    },
+    "Laravel|RCE|13": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "13",
+      "version": "5.3.0 <= 9.5.1+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": "use array_filter (can also use array_walk)"
+    },
+    "Laravel|RCE|14": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "14",
+      "version": "5.3.0 <= 9.5.1+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Laravel|RCE|15": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "15",
+      "version": "5.5.0 <= v9.5.1+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Laravel|RCE|16": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "16",
+      "version": "5.6.0 <= v9.5.1+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Laravel|RCE|17": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "17",
+      "version": "10.31.0",
+      "vector": "__destruct",
+      "author": "ahmadshauqi",
+      "info": ""
+    },
+    "Laravel|RCE|18": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "18",
+      "version": "10.31.0",
+      "vector": "__destruct",
+      "author": "ahmadshauqi",
+      "info": "Executes given PHP code through eval().\n        Requires PHPUnit, which is in the require-dev package."
+    },
+    "Laravel|RCE|19": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "19",
+      "version": "10.34",
+      "vector": "__destruct",
+      "author": "Fenrisk (Maxime Rinaudo)",
+      "info": ""
+    },
+    "Laravel|RCE|2": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "2",
+      "version": "5.4.0 <= 8.6.9+",
+      "vector": "__destruct",
+      "author": "BlackFan",
+      "info": ""
+    },
+    "Laravel|RCE|20": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "20",
+      "version": "5.6 <= 10.x",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": ""
+    },
+    "Laravel|RCE|21": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "21",
+      "version": "5.1.*",
+      "vector": "__destruct",
+      "author": "fallingskies",
+      "info": ""
+    },
+    "Laravel|RCE|22": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "22",
+      "version": "v10.0.0 <= v11.34.2+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": ""
+    },
+    "Laravel|RCE|3": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "3",
+      "version": "5.5.0 <= 5.8.35",
+      "vector": "__destruct",
+      "author": "BlackFan",
+      "info": "This chain triggers an ErrorException after code execution."
+    },
+    "Laravel|RCE|4": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "4",
+      "version": "5.4.0 <= 8.6.9+",
+      "vector": "__destruct",
+      "author": "BlackFan",
+      "info": ""
+    },
+    "Laravel|RCE|5": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "5",
+      "version": "5.8.30",
+      "vector": "__destruct",
+      "author": "Phith0n",
+      "info": "Executes given PHP code through eval().\n        Requires Mockery, which is in the require-dev package."
+    },
+    "Laravel|RCE|6": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "6",
+      "version": "5.5.* <= 5.8.35",
+      "vector": "__destruct",
+      "author": "Phith0n & holyvier",
+      "info": "Executes given PHP code through eval().\n        Requires Mockery, which is in the require-dev package."
+    },
+    "Laravel|RCE|7": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "7",
+      "version": "? <= 8.16.1",
+      "vector": "__destruct",
+      "author": "whira",
+      "info": "This chain throws a RuntimeException immediately after code execution."
+    },
+    "Laravel|RCE|8": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "8",
+      "version": "7.0.0 <= 8.6.9+",
+      "vector": "__destruct",
+      "author": "abdilahrf & cr1f",
+      "info": "Executes through eval()"
+    },
+    "Laravel|RCE|9": {
+      "framework": "Laravel",
+      "type": "RCE",
+      "chain": "9",
+      "version": "5.4.0 <= 9.1.8+",
+      "vector": "__destruct",
+      "author": "1nhann",
+      "info": ""
+    },
+    "Magento|FW|1": {
+      "framework": "Magento",
+      "type": "FW",
+      "chain": "1",
+      "version": "? <= 1.9.4.0",
+      "vector": "__destruct",
+      "author": "eboda",
+      "info": "The <remote_path> is either relative to the Magento root or absolute. The payload will throw an error during unserialization, but the file is written anyway."
+    },
+    "Magento|SQLI|1": {
+      "framework": "Magento",
+      "type": "SQLI",
+      "chain": "1",
+      "version": "? <= 1.9.4.0",
+      "vector": "__destruct",
+      "author": "mpchadwick",
+      "info": ""
+    },
+    "Magento2|FD|1": {
+      "framework": "Magento2",
+      "type": "FD",
+      "chain": "1",
+      "version": "*",
+      "vector": "__destruct",
+      "author": "Arjun Shibu (twitter.com/0xsegf)",
+      "info": "Deletes a given file/directory in the installation dir"
+    },
+    "Magento2|FD|2": {
+      "framework": "Magento2",
+      "type": "FD",
+      "chain": "2",
+      "version": "*",
+      "vector": "__destruct",
+      "author": "Maxime Rinaudo",
+      "info": ""
+    },
+    "MediaWiki|FD|1": {
+      "framework": "MediaWiki",
+      "type": "FD",
+      "chain": "1",
+      "version": "1.21.0+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "Reported - but declined - at:\n    https://phabricator.wikimedia.org/T389781"
+    },
+    "MediaWiki|FW|1": {
+      "framework": "MediaWiki",
+      "type": "FW",
+      "chain": "1",
+      "version": "1.25.0+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "php-parallel-lint is a dev dependency of\n    MediaWiki so should not be installed in Production, but might be."
+    },
+    "MediaWiki|RCE|1": {
+      "framework": "MediaWiki",
+      "type": "RCE",
+      "chain": "1",
+      "version": "<= 1.31.16",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "Protection was added to ScopedCallback in:\n    https://www.mediawiki.org/wiki/Release_notes/1.32 but 1.31 was an LTS that\n    was supported until 2021. Early versions of the class did not accept params\n    but could be used to call phpinfo(), for example."
+    },
+    "Monolog|FW|1": {
+      "framework": "Monolog",
+      "type": "FW",
+      "chain": "1",
+      "version": "3.0.0 <= 3.1.0+",
+      "vector": "__destruct",
+      "author": "mir-hossein (Mirhossein Rahmani)",
+      "info": "Please use this GC only for educational purposes or legal pentest, Thank you!"
+    },
+    "Monolog|RCE|1": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "1",
+      "version": "1.4.1 <= 1.6.0 1.17.2 <= 2.7.0+",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Monolog|RCE|2": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "2",
+      "version": "1.4.1 <= 2.7.0+",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Monolog|RCE|3": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "3",
+      "version": "1.1.0 <= 1.10.0",
+      "vector": "__destruct",
+      "author": "theBumble",
+      "info": ""
+    },
+    "Monolog|RCE|4": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "4",
+      "version": "? <= 2.4.4+",
+      "vector": "__destruct",
+      "author": "whira",
+      "info": "This chain will target debian based distribution (exim4 MTA) as it will perform a command injection on mail() \n        and use exim4 extended strings, the payload is `/bin/bash -c"
+    },
+    "Monolog|RCE|5": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "5",
+      "version": "1.25 <= 2.7.0+",
+      "vector": "__destruct",
+      "author": "mayfly",
+      "info": ""
+    },
+    "Monolog|RCE|6": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "6",
+      "version": "1.10.0 <= 2.7.0+",
+      "vector": "__destruct",
+      "author": "mayfly",
+      "info": ""
+    },
+    "Monolog|RCE|7": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "7",
+      "version": "1.10.0 <= 2.7.0+",
+      "vector": "__destruct",
+      "author": "mir-hossein",
+      "info": "Please use this exploit only for educational purposes or legal pentest, thank you!"
+    },
+    "Monolog|RCE|8": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "8",
+      "version": "3.0.0 <= 3.1.0+",
+      "vector": "__destruct",
+      "author": "cf (Charles Fol), mir-hossein (Mirhossein Rahmani)",
+      "info": "Please use this exploit only for educational purposes or legal pentest, Thank you!"
+    },
+    "Monolog|RCE|9": {
+      "framework": "Monolog",
+      "type": "RCE",
+      "chain": "9",
+      "version": "3.0.0 <= 3.1.0+",
+      "vector": "__destruct",
+      "author": "mir-hossein (Mirhossein Rahmani)",
+      "info": "Please use this exploit only for educational purposes or legal pentest, Thank you!"
+    },
+    "OpenCart|FW|1": {
+      "framework": "OpenCart",
+      "type": "FW",
+      "chain": "1",
+      "version": "4.0.0.0 <= 4.0.2.3+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "This will stop working when the following:\n    https://github.com/opencart/opencart/commit/087e20dd1cd9b441be5a327fd4b6698744bffb38\n    ..is included in a release."
+    },
+    "OpenCart|FW|2": {
+      "framework": "OpenCart",
+      "type": "FW",
+      "chain": "2",
+      "version": "3.0.3.5 <= 3.0.4.0+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "The gadget chain is documented here: https://seclists.org/fulldisclosure/2022/May/30"
+    },
+    "OpenCart|FW|3": {
+      "framework": "OpenCart",
+      "type": "FW",
+      "chain": "3",
+      "version": "3.0.0.0 <= 3.0.3.4",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "The gadget chain is documented here: https://seclists.org/fulldisclosure/2022/May/30"
+    },
+    "OpenCart|RCE|1": {
+      "framework": "OpenCart",
+      "type": "RCE",
+      "chain": "1",
+      "version": "4.0.0.0 < 4.1.0.0",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "This stopped working when this commit landed:\n    https://github.com/opencart/opencart/commit/087e20dd1cd9b441be5a327fd4b6698744bffb38"
+    },
+    "OpenCart|RCE|2": {
+      "framework": "OpenCart",
+      "type": "RCE",
+      "chain": "2",
+      "version": "4.1.0.0 <= 4.1.0.3+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "This Gadget Chain typically ends up causing\n    errors but not before the payload has been executed."
+    },
+    "Phalcon|RCE|1": {
+      "framework": "Phalcon",
+      "type": "RCE",
+      "chain": "1",
+      "version": "<= 1.2.2",
+      "vector": "__wakeup",
+      "author": "Raz0r",
+      "info": "This chain does not expect parameters, will eval() any code supplied in \n        php://input (i.e. POST data). Requires allow_url_include = true."
+    },
+    "Phing|FD|1": {
+      "framework": "Phing",
+      "type": "FD",
+      "chain": "1",
+      "version": "2.6.0 <= 3.0.0a3",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "PHPCSFixer|FD|1": {
+      "framework": "PHPCSFixer",
+      "type": "FD",
+      "chain": "1",
+      "version": "<= 2.17.3",
+      "vector": "__destruct",
+      "author": "snoopysecurity",
+      "info": ""
+    },
+    "PHPCSFixer|FD|2": {
+      "framework": "PHPCSFixer",
+      "type": "FD",
+      "chain": "2",
+      "version": "<= 2.17.3",
+      "vector": "__destruct",
+      "author": "snoopysecurity",
+      "info": ""
+    },
+    "PHPExcel|FD|1": {
+      "framework": "PHPExcel",
+      "type": "FD",
+      "chain": "1",
+      "version": "1.8.2+",
+      "vector": "__destruct",
+      "author": "erwan_lr",
+      "info": ""
+    },
+    "PHPExcel|FD|2": {
+      "framework": "PHPExcel",
+      "type": "FD",
+      "chain": "2",
+      "version": "<= 1.8.1",
+      "vector": "__destruct",
+      "author": "erwan_lr",
+      "info": ""
+    },
+    "PHPExcel|FD|3": {
+      "framework": "PHPExcel",
+      "type": "FD",
+      "chain": "3",
+      "version": "1.8.2+",
+      "vector": "__destruct",
+      "author": "erwan_lr",
+      "info": ""
+    },
+    "PHPExcel|FD|4": {
+      "framework": "PHPExcel",
+      "type": "FD",
+      "chain": "4",
+      "version": "<= 1.8.1",
+      "vector": "__destruct",
+      "author": "erwan_lr",
+      "info": ""
+    },
+    "PHPSecLib|RCE|1": {
+      "framework": "PHPSecLib",
+      "type": "RCE",
+      "chain": "1",
+      "version": "2.0.0 <= 2.0.34",
+      "vector": "__destruct",
+      "author": "crlf",
+      "info": "Generates warnings and notices."
+    },
+    "phpThumb|FD|1": {
+      "framework": "phpThumb",
+      "type": "FD",
+      "chain": "1",
+      "version": "<= v1.7.22",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "Fixed by https://github.com/JamesHeinrich/phpThumb/pull/226"
+    },
+    "PHPWord|FD|1": {
+      "framework": "PHPWord",
+      "type": "FD",
+      "chain": "1",
+      "version": "*",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": "Note that some files may not be removed (depends on permissions).\n        Target versions: commit 77438025265482ddcf050bce520d3c2b51645108, 30 May 2023 (~1.1.0) <= exploitable.\n        Depending on the version, the attribute name may vary between"
+    },
+    "Plates|RCE|1": {
+      "framework": "Plates",
+      "type": "RCE",
+      "chain": "1",
+      "version": "3.5.0 >= 3.6.0",
+      "vector": "__toString",
+      "author": "Tris0n",
+      "info": ""
+    },
+    "Silverstripe|FD|1": {
+      "framework": "Silverstripe",
+      "type": "FD",
+      "chain": "1",
+      "version": "3.5.5 <= 5.3.0+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "https://github.com/silverstripe/silverstripe-assets/pull/664"
+    },
+    "Slim|RCE|1": {
+      "framework": "Slim",
+      "type": "RCE",
+      "chain": "1",
+      "version": "3.8.1",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Smarty|FD|1": {
+      "framework": "Smarty",
+      "type": "FD",
+      "chain": "1",
+      "version": "?",
+      "vector": "__destruct",
+      "author": "d3adc0de",
+      "info": ""
+    },
+    "Smarty|SSRF|1": {
+      "framework": "Smarty",
+      "type": "SSRF",
+      "chain": "1",
+      "version": "?",
+      "vector": "__destruct",
+      "author": "mr_me",
+      "info": "Reference: https://www.ptsecurity.com/upload/corporate/ww-en/analytics/Positive-Research-2014-eng.pdf (2014).\n    This was originally an XXE gadget chain, but it does not work on recent PHP versions.\n    Therefore, the gadget chain is now just an SSRF.\n    According to raz0r, it"
+    },
+    "Snappy|FD|1": {
+      "framework": "Snappy",
+      "type": "FD",
+      "chain": "1",
+      "version": "*",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": "Note that some files may not be removed (depends on permissions).\n        Target versions: commit 619dcfd7b4fb50804288aedd6850d0b4ffabbaea, 15 May 2023 (~v1.4.2) <= exploitable"
+    },
+    "Spiral|RCE|1": {
+      "framework": "Spiral",
+      "type": "RCE",
+      "chain": "1",
+      "version": "2.7.0 <= 2.8.13",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Spiral|RCE|2": {
+      "framework": "Spiral",
+      "type": "RCE",
+      "chain": "2",
+      "version": "-2.8+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": "execute the function and throw an error"
+    },
+    "Sulu|RCE|1": {
+      "framework": "Sulu",
+      "type": "RCE",
+      "chain": "1",
+      "version": "2.5.0 <= 2.5.19, 2.6.0 <= 2.6.2",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "A Fatal error is thrown, but after the payload\n    has been unserialized."
+    },
+    "Sulu|RCE|2": {
+      "framework": "Sulu",
+      "type": "RCE",
+      "chain": "2",
+      "version": "2.5.19+, 2.6.3 <= 2.6.6",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "A Fatal error is thrown, but after the payload\n    has been unserialized."
+    },
+    "Sulu|RCE|3": {
+      "framework": "Sulu",
+      "type": "RCE",
+      "chain": "3",
+      "version": "2.6.7+",
+      "vector": "__destruct",
+      "author": "mcdruid",
+      "info": "A Fatal error is thrown, but after the payload\n    has been unserialized."
+    },
+    "SwiftMailer|FD|1": {
+      "framework": "SwiftMailer",
+      "type": "FD",
+      "chain": "1",
+      "version": "-5.4.12+, -6.2.1+",
+      "vector": "__destruct",
+      "author": "dsp25no",
+      "info": ""
+    },
+    "SwiftMailer|FD|2": {
+      "framework": "SwiftMailer",
+      "type": "FD",
+      "chain": "2",
+      "version": "5.4.6 <= 5.x-dev",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": "the path should be in the form of"
+    },
+    "SwiftMailer|FR|1": {
+      "framework": "SwiftMailer",
+      "type": "FR",
+      "chain": "1",
+      "version": "6.0.0 <= 6.3.0",
+      "vector": "__toString",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "SwiftMailer|FW|1": {
+      "framework": "SwiftMailer",
+      "type": "FW",
+      "chain": "1",
+      "version": "5.1.0 <= 5.4.8",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": ""
+    },
+    "SwiftMailer|FW|2": {
+      "framework": "SwiftMailer",
+      "type": "FW",
+      "chain": "2",
+      "version": "6.0.0 <= 6.0.1",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": ""
+    },
+    "SwiftMailer|FW|3": {
+      "framework": "SwiftMailer",
+      "type": "FW",
+      "chain": "3",
+      "version": "5.0.1",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": ""
+    },
+    "SwiftMailer|FW|4": {
+      "framework": "SwiftMailer",
+      "type": "FW",
+      "chain": "4",
+      "version": "4.0.0 <= ?",
+      "vector": "__destruct",
+      "author": "ronenshh",
+      "info": ""
+    },
+    "Symfony|FD|1": {
+      "framework": "Symfony",
+      "type": "FD",
+      "chain": "1",
+      "version": "v3.2.7 <= v3.4.25 v4.0.0 <= v4.1.11 v4.2.0 <= v4.2.6",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Symfony|FW|1": {
+      "framework": "Symfony",
+      "type": "FW",
+      "chain": "1",
+      "version": "2.5.2",
+      "vector": "DebugImport",
+      "author": "cfreal",
+      "info": "This chain is supposed to be uploaded through the /_profiler/import\n    \tpage. It will produce an error but the file will be created in the\n    \twebroot."
+    },
+    "Symfony|FW|2": {
+      "framework": "Symfony",
+      "type": "FW",
+      "chain": "2",
+      "version": "3.4",
+      "vector": "__destruct",
+      "author": "RicterZ",
+      "info": ""
+    },
+    "Symfony|RCE|1": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "1",
+      "version": "v3.1.0 <= v3.4.34",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": "Executes given command through proc_open()"
+    },
+    "Symfony|RCE|10": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "10",
+      "version": "2.0.4 <= 5.4.24 (all)",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Symfony|RCE|11": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "11",
+      "version": "2.0.4 <= 5.4.24 (all)",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Symfony|RCE|12": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "12",
+      "version": "1.3.0 <= 1.5.13~17",
+      "vector": "__destruct",
+      "author": "darkpills",
+      "info": "Works until 1.5.13, and until 1.5.17 if installed via git method, not composer (CVE-2024-28859)"
+    },
+    "Symfony|RCE|13": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "13",
+      "version": "1.2.0 <= 1.2.12",
+      "vector": "Serializable",
+      "author": "darkpills",
+      "info": "Requires sfDoctrinePlugin to be enabled"
+    },
+    "Symfony|RCE|14": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "14",
+      "version": "1.2.0 <= 1.2.12",
+      "vector": "__wakeup",
+      "author": "darkpills",
+      "info": "Requires sfPropelPlugin to be enabled"
+    },
+    "Symfony|RCE|15": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "15",
+      "version": "1.0.0 <= 1.1.9",
+      "vector": "__wakeup",
+      "author": "darkpills",
+      "info": "With Creole ORM"
+    },
+    "Symfony|RCE|16": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "16",
+      "version": "1.1.0 <= 1.5.18",
+      "vector": "Serializable",
+      "author": "darkpills",
+      "info": "CVE-2024-28861"
+    },
+    "Symfony|RCE|2": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "2",
+      "version": "2.3.42 < 2.6",
+      "vector": "__destruct",
+      "author": "crlf",
+      "info": "Executes through eval() ( <?php \\"
+    },
+    "Symfony|RCE|3": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "3",
+      "version": "2.6 <= 2.8.32",
+      "vector": "__destruct",
+      "author": "crlf",
+      "info": "Executes through eval() ( <?php \\"
+    },
+    "Symfony|RCE|4": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "4",
+      "version": "3.4.0-34, 4.2.0-11, 4.3.0-7",
+      "vector": "__destruct",
+      "author": "wisdomtree",
+      "info": "Execute $function with $parameter (CVE-2019-18889)"
+    },
+    "Symfony|RCE|5": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "5",
+      "version": "5.2.*",
+      "vector": "__destruct",
+      "author": "byc_404",
+      "info": ""
+    },
+    "Symfony|RCE|6": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "6",
+      "version": "v3.4.0-BETA4 <= v3.4.49 & v4.0.0-BETA4 <= v4.1.13",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": "Executes given command through proc_open()"
+    },
+    "Symfony|RCE|7": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "7",
+      "version": "v3.2.0 <= v3.4.34 v4.0.0 <= v4.2.11 v4.3.0 <= v4.3.7",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Symfony|RCE|8": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "8",
+      "version": "v3.4.0 <= v4.4.18 v5.0.0 <= v5.2.1",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "Symfony|RCE|9": {
+      "framework": "Symfony",
+      "type": "RCE",
+      "chain": "9",
+      "version": "2.6.0 <= 4.4.18",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "TCPDF|FD|1": {
+      "framework": "TCPDF",
+      "type": "FD",
+      "chain": "1",
+      "version": "<= 6.3.5",
+      "vector": "__destruct",
+      "author": "timoles",
+      "info": "TCPDF contains the variable"
+    },
+    "TCPDF|FD|2": {
+      "framework": "TCPDF",
+      "type": "FD",
+      "chain": "2",
+      "version": "6.2.26 <= 6.9.1",
+      "vector": "__destruct",
+      "author": "Aleksey Solovev, Nikita Sveshnikov (Positive Technologies)",
+      "info": "TCPDF contains the properties $file_id and $image keys. The imagekeys property expects an array of strings, each representing an absolute file path. The $file_id property can be set to any value. Upon __destruct, unlink() is called on each entry in the imagekeys array, provided PHP has permission to delete the files.\n\n        Although absolute paths are expected, each entry is internally prefixed with /tmp/.., allowing access to arbitrary locations outside the /tmp directory."
+    },
+    "ThinkPHP|FW|1": {
+      "framework": "ThinkPHP",
+      "type": "FW",
+      "chain": "1",
+      "version": "5.0.4-5.0.24",
+      "vector": "__destruct",
+      "author": "zcy2018",
+      "info": "We do not have full control of the path. Also, the path will turn to\n    a long hex value(md5). Your file path will be REMOTE_PATH/3b58a9545013e88c7186db11bb158c44.php.\n    Tested on Windows with php7.3.4 and apache2.4.39."
+    },
+    "ThinkPHP|FW|2": {
+      "framework": "ThinkPHP",
+      "type": "FW",
+      "chain": "2",
+      "version": "5.0.0-5.0.03",
+      "vector": "__destruct",
+      "author": "zcy2018",
+      "info": "We do not have full control of the path. Also, the path will turn to\n        a long hex value(md5). Your file path will be REMOTE_PATH/3b58a9545013e88c7186db11bb158c44.php.\n        Tested on Windows with php7.3.4 and apache2.4.39."
+    },
+    "ThinkPHP|RCE|1": {
+      "framework": "ThinkPHP",
+      "type": "RCE",
+      "chain": "1",
+      "version": "5.1.x-5.2.x",
+      "vector": "__destruct",
+      "author": "Smi1e",
+      "info": "This chain can only execute system().\n        Because the second parameter is uncontrollable"
+    },
+    "ThinkPHP|RCE|2": {
+      "framework": "ThinkPHP",
+      "type": "RCE",
+      "chain": "2",
+      "version": "5.0.24",
+      "vector": "__destruct",
+      "author": "kemmio",
+      "info": "This chain can only execute any function including system().\n\tShoutout to c014 the 0ctf 2021 challenge creator!\n        See the full writeup for the chain at https://blog.hexens.io/"
+    },
+    "ThinkPHP|RCE|3": {
+      "framework": "ThinkPHP",
+      "type": "RCE",
+      "chain": "3",
+      "version": "-6.0.1+",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "ThinkPHP|RCE|4": {
+      "framework": "ThinkPHP",
+      "type": "RCE",
+      "chain": "4",
+      "version": "-6.0.1+",
+      "vector": "__destruct",
+      "author": "???",
+      "info": ""
+    },
+    "Typo3|FD|1": {
+      "framework": "Typo3",
+      "type": "FD",
+      "chain": "1",
+      "version": "4.5.35 <= 10.4.1",
+      "vector": "__destruct",
+      "author": "coiffeur",
+      "info": "Note that some files may not be removed (depends on permissions).\n        Target versions: commit 1cbe3d8c089d94d76af2b37aea481cbd8b0707f9, 5 Jul 2014 (v4.5.35) <= exploitable <= commit ab4fec2a1aea46488e3dc2b9cca0712f3fa202b0, 12 May 2020 (v10.4.1)"
+    },
+    "vBulletin|RCE|1": {
+      "framework": "vBulletin",
+      "type": "RCE",
+      "chain": "1",
+      "version": "-5.6.9+",
+      "vector": "__destruct",
+      "author": "cfreal",
+      "info": ""
+    },
+    "WordPress|RCE|1": {
+      "framework": "WordPress",
+      "type": "RCE",
+      "chain": "1",
+      "version": "<= 6.3.1",
+      "vector": "__toString",
+      "author": "pandhacker",
+      "info": "https://wpscan.com/blog/finding-a-rce-gadget-chain-in-wordpress-core/ (@marcs0h)"
+    },
+    "WordPress|RCE|2": {
+      "framework": "WordPress",
+      "type": "RCE",
+      "chain": "2",
+      "version": "6.4.0 <= 6.4.1",
+      "vector": "__destruct",
+      "author": "Fenrisk (Szlam)",
+      "info": ""
+    },
+    "Yii|RCE|1": {
+      "framework": "Yii",
+      "type": "RCE",
+      "chain": "1",
+      "version": "1.1.20",
+      "vector": "__wakeup",
+      "author": "cfreal",
+      "info": "As the payload uses file_get_contents("
+    },
+    "Yii|RCE|2": {
+      "framework": "Yii",
+      "type": "RCE",
+      "chain": "2",
+      "version": "1.1.20",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    },
+    "Yii2|RCE|1": {
+      "framework": "Yii2",
+      "type": "RCE",
+      "chain": "1",
+      "version": "<2.0.38",
+      "vector": "__destruct",
+      "author": "russtone",
+      "info": "Executes $function with $parameter using call_user_func."
+    },
+    "Yii2|RCE|2": {
+      "framework": "Yii2",
+      "type": "RCE",
+      "chain": "2",
+      "version": "<2.0.38",
+      "vector": "__destruct",
+      "author": "RedTeam Pentesting GmbH",
+      "info": "Executes given PHP code through eval()."
+    },
+    "ZendFramework|FD|1": {
+      "framework": "ZendFramework",
+      "type": "FD",
+      "chain": "1",
+      "version": "? <= 1.12.20",
+      "vector": "__destruct",
+      "author": "mpchadwick",
+      "info": ""
+    },
+    "ZendFramework|RCE|1": {
+      "framework": "ZendFramework",
+      "type": "RCE",
+      "chain": "1",
+      "version": "? <= 1.12.20",
+      "vector": "__destruct",
+      "author": "mpchadwick",
+      "info": "- Uses preg_replace e modifier which has no effect in PHP >= 7.0.0\n        - Payload gets executed twice"
+    },
+    "ZendFramework|RCE|2": {
+      "framework": "ZendFramework",
+      "type": "RCE",
+      "chain": "2",
+      "version": "1.11.12 <= 1.12.20",
+      "vector": "__toString",
+      "author": "cfreal",
+      "info": "Uses zf1/zend-form, which requires zf1/zend-cache."
+    },
+    "ZendFramework|RCE|3": {
+      "framework": "ZendFramework",
+      "type": "RCE",
+      "chain": "3",
+      "version": "2.0.1 <= ?",
+      "vector": "__destruct",
+      "author": "eboda",
+      "info": ""
+    },
+    "ZendFramework|RCE|4": {
+      "framework": "ZendFramework",
+      "type": "RCE",
+      "chain": "4",
+      "version": "? <= 1.12.20",
+      "vector": "__destruct",
+      "author": "ydyachenko",
+      "info": "- Based on ZendFramework/RCE1\n        - Works on PHP >= 7.0.0"
+    },
+    "ZendFramework|RCE|5": {
+      "framework": "ZendFramework",
+      "type": "RCE",
+      "chain": "5",
+      "version": "2.0.0rc2 <= 2.5.3",
+      "vector": "__destruct",
+      "author": "CyanM0un",
+      "info": ""
+    }
+  }
+}
