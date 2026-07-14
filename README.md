@@ -1,4 +1,4 @@
-# Claude Code 渗透测试技能包
+# claude-code-PT-skills
 
 为 [Claude Code](https://claude.ai/code) 设计的红队/渗透测试/Bug Bounty 工作流技能集合。提供 15+ 个专业 skill 模块，覆盖从信息收集到后渗透的完整攻击链。
 
