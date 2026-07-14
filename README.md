@@ -7,13 +7,13 @@
 将本仓库克隆到 Claude Code 项目的 `.claude/` 目录下：
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-code-PT-skills.git .claude
+git clone https://github.com/sec1900/claude-code-PT-skills.git .claude
 ```
 
 或者作为子模块引入已有项目：
 
 ```bash
-git submodule add https://github.com/YOUR_USERNAME/claude-code-PT-skills.git .claude
+git submodule add https://github.com/sec1900/claude-code-PT-skills.git .claude
 ```
 
 安装后需根据你的环境修改以下占位符：
